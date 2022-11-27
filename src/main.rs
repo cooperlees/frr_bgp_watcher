@@ -39,9 +39,10 @@ fn have_bgp_routes() -> bool {
     };
 
     if route_table.contains(SEARCH_SUBSTR) {
+        info!("-> Found '{}' routes in the linux table", SEARCH_SUBSTR);
         return true;
     }
-    error!("Found no '{}' routes in the linux table", SEARCH_SUBSTR);
+    error!("!! Found NO '{}' routes in the linux table", SEARCH_SUBSTR);
     false
 }
 
